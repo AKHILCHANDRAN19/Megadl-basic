@@ -7,7 +7,7 @@ def download_mega_folder(mega_link, download_path):
         os.makedirs(download_path, exist_ok=True)
 
         # Command to download the entire Mega folder
-        command = f"megadl {mega_link} --path={download_path}"
+        command = f'megadl "{mega_link}" --path="{download_path}"'
         print(f"Running command: {command}")
 
         # Execute the command using subprocess
@@ -19,7 +19,7 @@ def download_mega_folder(mega_link, download_path):
     except Exception as e:
         print(f"Error: {e}")
 
-if name == "main":
+if __name__ == "__main__":
     # Prompt the user for the Mega folder link
     mega_link = input("Enter the Mega.nz folder link: ")
 
